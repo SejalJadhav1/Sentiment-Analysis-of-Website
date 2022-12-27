@@ -86,7 +86,7 @@ with left_column:
         st.subheader("Negative-Score:")
         st.subheader(retrieve_data(fill_url)["negative-score"])
     except Exception:
-        st.write("try harder")
+        retrieve_data(fill_url)["negative-score"]
 with middle_column:
     try:
         st.subheader("Neutral-Score:")
