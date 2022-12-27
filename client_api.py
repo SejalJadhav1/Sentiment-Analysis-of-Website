@@ -116,6 +116,8 @@ try:
 except Exception:
     pass
 
+if __name__ == '__main__':
+    pos_neg_neu()
 
 if st.checkbox("Show/Hide"):
     st.write("If you like my work, and have any suggetions, mail me on sejalsj2001@gmail.com")
