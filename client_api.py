@@ -100,7 +100,7 @@ with right_column:
 
 st.markdown("""---""")
 
-
+@st.cache
 def pos_neg_neu(sentiment_text):
     try:
         if (score['negative-score'] >= score['neutral-score']) and (score['negative-score'] >= score['positive-score']):
