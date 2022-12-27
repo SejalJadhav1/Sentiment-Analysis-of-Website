@@ -74,17 +74,17 @@ def retrieve_data(url):
     except Exception:
         pass    
 
-score = retrieve_data(fill_url)
-l = []
-for i in score.values():
-    l.append(i)
-l
+# score = retrieve_data(fill_url)
+# l = []
+# for i in score.values():
+#     l.append(i)
+# l
 
 left_column, middle_column, right_column  = st.columns(3)
 with left_column:
     try:
         st.subheader("Negative-Score:")
-        st.subheader(l[0])
+        st.subheader(retrieve_data(fill_url)["negative-score"])
     except Exception:
         st.write("try harder")
 with middle_column:
