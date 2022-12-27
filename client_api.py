@@ -12,6 +12,8 @@ import string
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
 
+@st.experimental_memo
+
 st.set_page_config(page_title="Sentiment Analysis of Website", page_icon=":memo::", layout="wide")
 
 st.title(":memo: Sentiment Analysis of Website")
