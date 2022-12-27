@@ -77,14 +77,23 @@ score = retrieve_data(fill_url)
 
 left_column, middle_column, right_column  = st.columns(3)
 with left_column:
-    st.subheader("Negative-Score:")
-    st.subheader(score["negative-score"])
+    try:
+        st.subheader("Negative-Score:")
+        st.subheader(score["negative-score"])
+    except Exception:
+        pass
 with middle_column:
-    st.subheader("Neutral-Score:")
-    st.subheader(score["neutral-score"])
+    try:
+        st.subheader("Neutral-Score:")
+        st.subheader(score["neutral-score"])
+    except Exception:
+        pass
 with right_column:
-    st.subheader("Positive-Score:")
-    st.subheader(score["positive-score"])
+    try:
+        st.subheader("Positive-Score:")
+        st.subheader(score["positive-score"])
+    except Exception:
+        pass
 
 st.markdown("""---""")
 
