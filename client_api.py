@@ -18,10 +18,10 @@ st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
 
 
-@st.cache
+
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
-
+@st.cache
 def retrieve_data(url):
     try:
         headers = {
