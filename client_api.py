@@ -131,3 +131,7 @@ hide_st_style = """
              """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
+if __name__ == "__main__":
+    st.write("Executed when invoked directly")
+else:
+    st.write("Executed when imported")
