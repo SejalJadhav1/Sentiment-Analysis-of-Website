@@ -14,10 +14,12 @@ from nltk.tokenize import word_tokenize
 
 st.set_page_config(page_title="Sentiment Analysis of Website", page_icon=":memo::", layout="wide")
 
+@st.cache
 st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
 
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
+
 
 def retrieve_data(url):
     try:
