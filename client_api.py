@@ -70,7 +70,7 @@ def retrieve_data(url):
         return final_dict
 
     except Exception:
-        pass
+        pass    
 
 score = retrieve_data(fill_url)
 
@@ -110,8 +110,6 @@ def pos_neg_neu(sentiment_text):
     except Exception:
         pass
 
-if __name__ == '__main__':
-    pos_neg_neu(score)
     
 try:
     st.subheader(pos_neg_neu(score))
@@ -129,4 +127,8 @@ hide_st_style = """
              </style>
              """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
+    
+if __name__ == '__main__':
+    run()
 
