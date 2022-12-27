@@ -77,25 +77,16 @@ score = retrieve_data(fill_url)
 
 left_column, middle_column, right_column  = st.columns(3)
 with left_column:
-    try:
-        st.subheader("Negative-Score:")
-        st.subheader(score["negative-score"])
-    except Exception:
-        pass
+    st.subheader("Negative-Score:")
+    st.subheader(score["negative-score"])
 with middle_column:
-    try:
-        st.subheader("Neutral-Score:")
-        st.subheader(score["neutral-score"])
-    except Exception:
-        pass
+    st.subheader("Neutral-Score:")
+    st.subheader(score["neutral-score"])
 with right_column:
-    try:
-        st.subheader("Positive-Score:")
-        st.subheader(score["positive-score"])
-    except Exception:
-        pass
-st.markdown("""---""")
+    st.subheader("Positive-Score:")
+    st.subheader(score["positive-score"])
 
+st.markdown("""---""")
 
 
 def pos_neg_neu(sentiment_text):
