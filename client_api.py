@@ -59,10 +59,10 @@ def retrieve_data(url):
         for i in res:
             if i == "":
                 res.remove(i)
-        filtered_words = [word for word in res if word not in stopwords.words('english')]
+#         filtered_words = [word for word in res if word not in stopwords.words('english')]
 
         lemmatizer = WordNetLemmatizer()
-        lemmatized_output = ' '.join([lemmatizer.lemmatize(w) for w in filtered_words])
+        lemmatized_output = ' '.join([lemmatizer.lemmatize(w) for w in res])
 
     # word_list = nltk.word_tokenize(lemmatized_output)
 
