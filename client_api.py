@@ -21,6 +21,7 @@ st.markdown("##")
 
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
+@st.cache(allow_output_mutation=True)
 def retrieve_data(url):
     try:
         headers = {
