@@ -12,6 +12,9 @@ import string
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
 
+
+fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
+
 def retrieve_data(url):
     try:
         headers = {
