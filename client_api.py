@@ -75,15 +75,16 @@ def retrieve_data(url):
         pass    
 
 score = retrieve_data(fill_url)
+neg = score["negative-score"]
 
 
 left_column, middle_column, right_column  = st.columns(3)
 with left_column:
     try:
         st.subheader("Negative-Score:")
-        st.subheader(score["negative-score"])
+        st.subheader(neg)
     except Exception:
-        st.write("nahi hua")
+        st.write("try harder")
 with middle_column:
     try:
         st.subheader("Neutral-Score:")
