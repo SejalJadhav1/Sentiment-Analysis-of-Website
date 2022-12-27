@@ -4,20 +4,14 @@ from bs4 import BeautifulSoup as bs
 import requests
 import html5lib
 from urllib.request import urlopen
-from random import choice
-import os
-from bs4 import BeautifulSoup as bs
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-import nltk
-nltk.download('wordnet')
 import matplotlib.pyplot as plt
 import streamlit as st
 import string
 from collections import Counter
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
-import plotly.graph_objects as go
 
 st.set_page_config(page_title="Sentiment Analysis of Website", page_icon=":memo::", layout="wide")
 
