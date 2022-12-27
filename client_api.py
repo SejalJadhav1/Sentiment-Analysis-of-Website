@@ -21,7 +21,6 @@ st.markdown("##")
 
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
-@st.cache
 def retrieve_data(url):
     try:
         headers = {
@@ -84,7 +83,7 @@ with left_column:
         st.subheader("Negative-Score:")
         st.subheader(score["negative-score"])
     except Exception:
-        pass
+        st.write("nahi hua")
 with middle_column:
     try:
         st.subheader("Neutral-Score:")
@@ -100,7 +99,6 @@ with right_column:
 
 st.markdown("""---""")
 
-@st.cache
 def pos_neg_neu(sentiment_text):
     try:
         if (score['negative-score'] >= score['neutral-score']) and (score['negative-score'] >= score['positive-score']):
@@ -131,7 +129,4 @@ hide_st_style = """
              """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-if __name__ == "__main__":
-    st.write("Executed when invoked directly")
-else:
-    st.write("Executed when imported")
+    
