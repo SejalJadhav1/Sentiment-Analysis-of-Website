@@ -7,10 +7,8 @@ import html5lib
 from urllib.request import urlopen
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-import matplotlib.pyplot as plt
 import streamlit as st
 import string
-from collections import Counter
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
 
