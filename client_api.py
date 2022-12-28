@@ -23,8 +23,7 @@ fill_url = st.text_input("Enter the website (url) you want your sentiment scores
 
 @st.cache(allow_output_mutation=True)
 def retrieve_data(url):
-    try:
-        headers = {
+    headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0', }
         data = [url]
 
@@ -72,9 +71,6 @@ def retrieve_data(url):
 
         return final_dict
 
-    except Exception:
-        st.write("try")    
-    
 score = retrieve_data(fill_url)
 # l = []
 # for i in score.values():
