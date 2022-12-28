@@ -21,11 +21,10 @@ st.markdown("##")
 
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
-@st.cache()
-def retrieve_data(fill_url):
+def retrieve_data(url):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0', }
-    data = [fill_url]
+    data = [url]
 
     for i in data:
         r = requests.get(i, headers=headers)
@@ -59,10 +58,12 @@ def retrieve_data(fill_url):
     for i in res:
         if i=="":
             res.remove(i)
-    filtered_words = [word for word in res if word not in stopwords.words('english')]
-    
+            
+    stop_words = set(stopwords.words('english'))        
+    filtered_words = [w for w in res if not w.lower() in stop_words]
+
     lemmatizer = WordNetLemmatizer()
-    lemmatized_output = ' '.join([lemmatizer.lemmatize(w) for w in filtered_words])
+    lemmatized_output = ' '.join([lemmatizer.lemmatize(i) for i in filtered_words])
 
     #word_list = nltk.word_tokenize(lemmatized_output)
     
@@ -70,57 +71,10 @@ def retrieve_data(fill_url):
     new_keys = ['negative-score', 'neutral-score', 'positive-score', 'compound']
     final_dict = dict(zip(new_keys, list(score.values())))
         
-    return final_dict  
+    return final_dict
 
-score = retrieve_data(fill_url)
-# l = []
-# for i in score.values():
-#     l.append(i)
-# l
+st.write(retrieve_data(fill_url))
 
-
-left_column, middle_column, right_column  = st.columns(3)
-with left_column:
-    try:
-        st.subheader("Negative-Score:")
-        st.subheader(score)
-    except Exception:
-        st.write("try")
-with middle_column:
-    try:
-        st.subheader("Neutral-Score:")
-        st.subheader(score["neutral-score"])
-    except Exception:
-        pass
-with right_column:
-    try:
-        st.subheader("Positive-Score:")
-        st.subheader(score["positive-score"])
-    except Exception:
-        pass
-
-st.markdown("""---""")
-
-def pos_neg_neu(sentiment_text):
-    try:
-        if (score['negative-score'] >= score['neutral-score']) and (score['negative-score'] >= score['positive-score']):
-            return "The sentiment of your input website is 'NEGATIVE'"
-        elif (score['neutral-score'] >= score['negative-score']) and (
-                score['neutral-score'] >= score['positive-score']):
-            return "The sentiment of your input website is 'NEUTRAL'"
-        else:
-            return "The sentiment of your input website is 'POSITIVE'"
-    except Exception:
-        pass
-
-    
-try:
-    st.subheader(pos_neg_neu(score))
-except Exception:
-    pass
-
-
-st.write(score)
 
 if st.checkbox("Show/Hide"):
     st.write("If you like my work, and have any suggetions, mail me on sejalsj2001@gmail.com")
