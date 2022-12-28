@@ -73,7 +73,7 @@ def retrieve_data(url):
         return final_dict
 
     except Exception:
-        "try"    
+        st.write("try")    
     
 score = retrieve_data(fill_url)
 # l = []
