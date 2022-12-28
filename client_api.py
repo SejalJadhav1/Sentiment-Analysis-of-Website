@@ -21,55 +21,56 @@ st.markdown("##")
 
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
-@st.cache(allow_output_mutation=True)
-def retrieve_data(url):
+@st.cache()
+def retrieve_data(fill_url):
     headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0', }
-        data = [url]
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0', }
+    data = [fill_url]
 
-        for i in data:
-            r = requests.get(i, headers=headers)
-            htmlcontent = r.content
-            soup = bs(htmlcontent, "html.parser")
-            title = soup.title
+    for i in data:
+        r = requests.get(i, headers=headers)
+        htmlcontent = r.content
 
-            list_ = []
-            list_.append(title.get_text())
+        soup = bs(htmlcontent, "html.parser")
+        title = soup.title
+        
+        list_ = []
+        list_.append(title.get_text())
+        
+        for data in soup.find_all("p"):
+            list_.append(data.get_text()) 
 
-            for data in soup.find_all("p"):
-                list_.append(data.get_text())
+        l = []
+        for i in list_:
+            i = i.split(" ")
+            l = l + i 
 
-            l = []
-            for i in list_:
-                i = i.split(" ")
-                l = l + i
+    test_list = l
+    loweralphabets="abcdefghijklmnopqrstuvwxyz"
+    upperalphabets="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    x=loweralphabets+upperalphabets
+    res=[]
+    for i in test_list:
+        a = ""
+        for j in i:
+            if j in x:
+                a+=j
+        res.append(a)
+    for i in res:
+        if i=="":
+            res.remove(i)
+    filtered_words = [word for word in res if word not in stopwords.words('english')]
+    
+    lemmatizer = WordNetLemmatizer()
+    lemmatized_output = ' '.join([lemmatizer.lemmatize(w) for w in filtered_words])
 
-        test_list = l
-        loweralphabets = "abcdefghijklmnopqrstuvwxyz"
-        upperalphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        x = loweralphabets + upperalphabets
-        res = []
-        for i in test_list:
-            a = ""
-            for j in i:
-                if j in x:
-                    a += j
-            res.append(a)
-        for i in res:
-            if i == "":
-                res.remove(i)
-#         filtered_words = [word for word in res if word not in stopwords.words('english')]
-
-        lemmatizer = WordNetLemmatizer()
-        lemmatized_output = ' '.join([lemmatizer.lemmatize(w) for w in res])
-
-    # word_list = nltk.word_tokenize(lemmatized_output)
-
-        score = SentimentIntensityAnalyzer().polarity_scores(lemmatized_output)
-        new_keys = ['negative-score', 'neutral-score', 'positive-score', 'compound']
-        final_dict = dict(zip(new_keys, list(score.values())))
-
-        return final_dict
+    #word_list = nltk.word_tokenize(lemmatized_output)
+    
+    score = SentimentIntensityAnalyzer().polarity_scores(lemmatized_output)
+    new_keys = ['negative-score', 'neutral-score', 'positive-score', 'compound']
+    final_dict = dict(zip(new_keys, list(score.values())))
+        
+    return final_dict  
 
 score = retrieve_data(fill_url)
 # l = []
