@@ -86,7 +86,7 @@ left_column, middle_column, right_column  = st.columns(3)
 with left_column:
     try:
         st.subheader("Negative-Score:")
-        st.subheader(str(score["negative-score"]))
+        st.subheader(score)
     except Exception:
         st.write("try")
 with middle_column:
