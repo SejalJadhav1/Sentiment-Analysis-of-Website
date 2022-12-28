@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 import bs4
+import nltk
+nltk.download('stopwords')
 from bs4 import BeautifulSoup as bs
 import requests
 import html5lib
