@@ -75,52 +75,13 @@ def retrieve_data(url):
     except Exception:
         pass    
     
-st.session_state.score = {}
 score = retrieve_data(fill_url)
 # l = []
 # for i in score.values():
 #     l.append(i)
 # l
 
-left_column, middle_column, right_column  = st.columns(3)
-with left_column:
-    try:
-        st.subheader("Negative-Score:")
-        st.subheader(score)
-    except Exception:
-        st.write("try")
-with middle_column:
-    try:
-        st.subheader("Neutral-Score:")
-        st.subheader(score["neutral-score"])
-    except Exception:
-        pass
-with right_column:
-    try:
-        st.subheader("Positive-Score:")
-        st.subheader(score["positive-score"])
-    except Exception:
-        pass
-
-st.markdown("""---""")
-
-def pos_neg_neu(sentiment_text):
-    try:
-        if (score['negative-score'] >= score['neutral-score']) and (score['negative-score'] >= score['positive-score']):
-            return "The sentiment of your input website is 'NEGATIVE'"
-        elif (score['neutral-score'] >= score['negative-score']) and (
-                score['neutral-score'] >= score['positive-score']):
-            return "The sentiment of your input website is 'NEUTRAL'"
-        else:
-            return "The sentiment of your input website is 'POSITIVE'"
-    except Exception:
-        pass
-
-    
-try:
-    st.subheader(pos_neg_neu(score))
-except Exception:
-    pass
+st.write(score)
 
 if st.checkbox("Show/Hide"):
     st.write("If you like my work, and have any suggetions, mail me on sejalsj2001@gmail.com")
