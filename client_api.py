@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup as bs
 import requests
 from requests.exceptions import MissingSchema
 import html5lib
-import json
 from urllib.request import urlopen
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -26,19 +25,84 @@ st.markdown("##")
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
 
-def _load_url_or_file(self, url):
-        try:
-            response = requests.get(url)
-            if response.ok:
-                return response.text
-            else:
-                raise requests.HTTPError
-        except (MissingSchema, requests.HTTPError):
-            st.write("tryyy")
+def retrieve_data(fill_url):
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0', }
+    data = [fill_url]
 
- st.write(_load_url_or_file(fill_url))           
+    for i in data:
+        r = requests.get(i, headers=headers)
+        htmlcontent = r.content
+
+        soup = bs(htmlcontent, "html.parser")
+        title = soup.title
+        
+        list_ = []
+        list_.append(title.get_text())
+        
+        for data in soup.find_all("p"):
+            list_.append(data.get_text()) 
+
+        l = []
+        for i in list_:
+            i = i.split(" ")
+            l = l + i 
+
+    test_list = l
+    loweralphabets="abcdefghijklmnopqrstuvwxyz"
+    upperalphabets="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    x=loweralphabets+upperalphabets
+    res=[]
+    for i in test_list:
+        a = ""
+        for j in i:
+            if j in x:
+                a+=j
+        res.append(a)
+    for i in res:
+        if i=="":
+            res.remove(i)
             
+    stop_words = set(stopwords.words('english'))        
+    filtered_words = [w for w in res if not w.lower() in stop_words]
 
+    lemmatizer = WordNetLemmatizer()
+    lemmatized_output = ' '.join([lemmatizer.lemmatize(i) for i in filtered_words])
+
+    #word_list = nltk.word_tokenize(lemmatized_output)
+    
+    score = SentimentIntensityAnalyzer().polarity_scores(lemmatized_output)
+    new_keys = ['negative-score', 'neutral-score', 'positive-score', 'compound']
+    final_dict = dict(zip(new_keys, list(score.values())))
+        
+    return final_dict
+
+left_column, middle_column, right_column  = st.columns(3)
+with left_column:
+        st.subheader("Negative-Score:")
+        st.subheader(score["negative-score"])
+with middle_column:
+        st.subheader("Neutral-Score:")
+        st.subheader(score["neutral-score"])
+with right_column:
+        st.subheader("Positive-Score:")
+        st.subheader(score["positive-score"])
+
+st.markdown("""---""")
+
+def pos_neg_neu(sentiment_text):
+        if (score['negative-score'] >= score['neutral-score']) and (score['negative-score'] >= score['positive-score']):
+            return "The sentiment of your input website is 'NEGATIVE'"
+        elif (score['neutral-score'] >= score['negative-score']) and (
+                score['neutral-score'] >= score['positive-score']):
+            return "The sentiment of your input website is 'NEUTRAL'"
+        else:
+            return "The sentiment of your input website is 'POSITIVE'"
+
+
+st.subheader(pos_neg_neu(score))
+
+st.write(retrieve_data(fill_url))
 
 
 if st.checkbox("Show/Hide"):
