@@ -74,7 +74,8 @@ def retrieve_data(url):
 
     except Exception:
         pass    
-
+    
+st.session_state.score = {}
 score = retrieve_data(fill_url)
 # l = []
 # for i in score.values():
