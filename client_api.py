@@ -5,6 +5,7 @@ import nltk
 nltk.download('wordnet')
 nltk.download('stopwords')
 nltk.download('omw-1.4')
+nltk.download('vader_lexicon')
 from bs4 import BeautifulSoup as bs
 import requests
 from requests.exceptions import MissingSchema
