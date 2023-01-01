@@ -74,13 +74,20 @@ def retrieve_data(fill_url):
     score = SentimentIntensityAnalyzer().polarity_scores(lemmatized_output)
     new_keys = ['negative-score', 'neutral-score', 'positive-score', 'compound']
     final_dict = dict(zip(new_keys, list(score.values())))
-        
-    return final_dict
+    key = [] 
+    value = []
+    for i in final_dict.keys():
+        key.append(i)
+    for i in final_dict.values():
+        value.append(i)
+    return key , value
+
+score = retrieve_data(fill_url)
 
 left_column, middle_column, right_column  = st.columns(3)
 with left_column:
         st.subheader("Negative-Score:")
-        st.subheader(score["negative-score"])
+        st.subheader(score[0][0])
 with middle_column:
         st.subheader("Neutral-Score:")
         st.subheader(score["neutral-score"])
