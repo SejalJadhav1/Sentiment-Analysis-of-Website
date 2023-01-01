@@ -27,6 +27,9 @@ st.markdown("##")
 
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
+if fill_url is None:
+    st.info("Please fill in a URL")
+    st.stop()
 
 def retrieve_data(fill_url):
     headers = {
@@ -85,9 +88,7 @@ def retrieve_data(fill_url):
         value.append(i)
     return key , value
 
-if fill_url is None:
-    st.info("Please fill in a URL")
-    st.stop()
+
 score = retrieve_data(fill_url)
 
 
