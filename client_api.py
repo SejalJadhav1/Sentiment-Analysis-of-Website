@@ -86,8 +86,7 @@ def retrieve_data(fill_url):
 try:
     score = retrieve_data(fill_url)
 except Exception:
-    if fill_url is None:
-        st.info("paste a url")
+    st.write("try")
 
 
 
