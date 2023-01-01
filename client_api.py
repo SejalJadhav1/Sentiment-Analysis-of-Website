@@ -24,13 +24,12 @@ st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
 
 
+try:
+    fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
+except Exception:
+    print("try")
 
-fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
-
-def retrieve_data(fill_url):
-    if fill_url is None:
-        pass
-    
+def retrieve_data(fill_url):    
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0', }
     data = [fill_url]
