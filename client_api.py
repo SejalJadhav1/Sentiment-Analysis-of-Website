@@ -27,7 +27,8 @@ st.markdown("##")
 try:
     fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 except Exception:
-    print("try")
+    if fill_url is None:
+        st.info("paste a url")
 
 def retrieve_data(fill_url):    
     headers = {
