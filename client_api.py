@@ -111,7 +111,6 @@ def pos_neg_neu(sentiment_text):
 
 st.subheader(pos_neg_neu(score))
 
-st.write(retrieve_data(fill_url))
 
 
 if st.checkbox("Show/Hide"):
