@@ -18,6 +18,8 @@ import string
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
 
+fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
+
 st.set_page_config(page_title="Sentiment Analysis of Website", page_icon=":memo::", layout="wide")
 
 st.title(":memo: Sentiment Analysis of Website")
@@ -81,9 +83,11 @@ def retrieve_data(fill_url):
         value.append(i)
     return key , value
 
-score = retrieve_data(fill_url)
-
-
+try:
+    score = retrieve_data(fill_url)
+except Exception:
+    st.write("try")
+    
 left_column, middle_column, right_column  = st.columns(3)
 with left_column:
         st.subheader("Negative-Score:")
