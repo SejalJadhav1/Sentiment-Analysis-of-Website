@@ -24,7 +24,6 @@ st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
 
 
-
 def retrieve_data(fill_url):    
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0', }
@@ -82,13 +81,7 @@ def retrieve_data(fill_url):
         value.append(i)
     return key , value
 
-
-try:
-    score = retrieve_data(fill_url)
-except Exception:
-    st.write("try")
-
-
+score = retrieve_data(fill_url)
 
 
 left_column, middle_column, right_column  = st.columns(3)
