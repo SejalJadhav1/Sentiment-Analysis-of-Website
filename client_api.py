@@ -24,11 +24,6 @@ st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
 
 
-try:
-    fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
-except Exception:
-    if fill_url is None:
-        st.info("paste a url")
 
 def retrieve_data(fill_url):    
     headers = {
@@ -88,7 +83,13 @@ def retrieve_data(fill_url):
     return key , value
 
 
-score = retrieve_data(fill_url)
+try:
+    score = retrieve_data(fill_url)
+except Exception:
+    if fill_url is None:
+        st.info("paste a url")
+
+
 
 
 left_column, middle_column, right_column  = st.columns(3)
