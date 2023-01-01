@@ -85,11 +85,10 @@ def retrieve_data(fill_url):
         value.append(i)
     return key , value
 
-score = retrieve_data(fill_url)
-
 if fill_url is None:
     st.info("Please fill in a URL")
     st.stop()
+score = retrieve_data(fill_url)
 
 
 left_column, middle_column, right_column  = st.columns(3)
