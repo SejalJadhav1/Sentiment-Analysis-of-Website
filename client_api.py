@@ -101,10 +101,10 @@ with right_column:
 st.markdown("""---""")
 
 def pos_neg_neu(sentiment_text):
-        if (score['negative-score'] >= score['neutral-score']) and (score['negative-score'] >= score['positive-score']):
+        if (score[1][0] >= score[1][1]) and (score[1][2] >= score[1][0]):
             return "The sentiment of your input website is 'NEGATIVE'"
-        elif (score['neutral-score'] >= score['negative-score']) and (
-                score['neutral-score'] >= score['positive-score']):
+        elif (score[1][1] >= score[1][2]) and (
+              score[1][1] >= score[1][0]]):
             return "The sentiment of your input website is 'NEUTRAL'"
         else:
             return "The sentiment of your input website is 'POSITIVE'"
