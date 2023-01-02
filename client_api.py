@@ -88,11 +88,8 @@ def retrieve_data(fill_url):
         value.append(i)
     return key , value
 
+score = retrieve_data(fill_url)
 
-try:
-    score = retrieve_data(fill_url)
-except Exception:
-    st.write("tryyy")
     
     
 left_column, middle_column, right_column  = st.columns(3)
