@@ -19,17 +19,11 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
 
 st.set_page_config(page_title="Sentiment Analysis of Website", page_icon=":memo::", layout="wide")
-
-try:
-    fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
-    if fill_url is None:
-        st.info("paste url") 
-        st.stop()
-except Exception:
-    pass
-
 st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
+
+
+fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
 
 def retrieve_data(fill_url):    
