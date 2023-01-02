@@ -20,7 +20,12 @@ from nltk.tokenize import word_tokenize
 
 st.set_page_config(page_title="Sentiment Analysis of Website", page_icon=":memo::", layout="wide")
 
-fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
+try:
+    fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
+    if fill_url is None:
+        st.info("paste url")        
+ except:
+    st.write("try")
 
 st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
@@ -83,16 +88,11 @@ def retrieve_data(fill_url):
         value.append(i)
     return key , value
 
-def try(fill_url):
-    if fill_url is None:
-        st.info("paste the url")
-    else:
-        return fill_url
 
 try:
-    score = retrieve_data(try(fill_url))
+    score = retrieve_data(fill_url)
 except Exception:
-    st.write("try")
+    st.write("tryyy")
     
     
 left_column, middle_column, right_column  = st.columns(3)
