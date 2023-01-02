@@ -24,7 +24,7 @@ try:
     fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
     if fill_url is None:
         st.info("paste url")        
- except:
+ except Exception:
     st.write("try")
 
 st.title(":memo: Sentiment Analysis of Website")
