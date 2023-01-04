@@ -26,7 +26,6 @@ page_bg_img = f"""
 background-color: #ffffff;
 opacity: 0.6;
 background-image:  linear-gradient(135deg, #42cce5 25%, transparent 25%), linear-gradient(225deg, #42cce5 25%, transparent 25%), linear-gradient(45deg, #42cce5 25%, transparent 25%), linear-gradient(315deg, #42cce5 25%, #ffffff 25%);
-background-position: center;
 background-repeat: repeat;
 }}
 </style>
