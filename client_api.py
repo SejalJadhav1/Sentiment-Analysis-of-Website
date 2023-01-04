@@ -22,8 +22,6 @@ st.set_page_config(page_title="Sentiment Analysis of Website", page_icon=":memo:
 st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
 
-img = get_img_as_base64("image.jpg")
-
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
