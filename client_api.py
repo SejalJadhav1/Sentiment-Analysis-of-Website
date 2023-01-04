@@ -22,6 +22,20 @@ st.set_page_config(page_title="Sentiment Analysis of Website", page_icon=":memo:
 st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
 
+img = get_img_as_base64("image.jpg")
+
+page_bg_img = f"""
+<style>
+[data-testid="stAppViewContainer"] > .main {{
+background-color: #ffffff;
+opacity: 0.6;
+background-image:  linear-gradient(135deg, #42cce5 25%, transparent 25%), linear-gradient(225deg, #42cce5 25%, transparent 25%), linear-gradient(45deg, #42cce5 25%, transparent 25%), linear-gradient(315deg, #42cce5 25%, #ffffff 25%);
+background-size: 180%;
+background-position: center;
+background-repeat: repeat;
+}}
+</style>
+"""
 
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
