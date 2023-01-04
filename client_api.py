@@ -35,6 +35,9 @@ background-repeat: repeat;
 </style>
 """
 
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
+
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
 
