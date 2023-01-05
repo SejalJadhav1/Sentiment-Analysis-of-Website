@@ -8,10 +8,11 @@ span.css-10trblm.e16nr0p30
 
 section.main.css-k1vhr4.egzxvld3
 {
-  background-color: "beige"
+  background-color: "beige";
 }
 
 div.stException
 {
-  background-color: "beige"
+  display: "none";
+  background-color: "beige";
 }
