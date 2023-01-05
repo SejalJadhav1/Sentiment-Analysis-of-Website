@@ -36,7 +36,7 @@ st.markdown(
 <style>
 .stException {
 
-dispaly : "none";
+dispaly : "none" !important;
 background-color: "black"
 
 }
