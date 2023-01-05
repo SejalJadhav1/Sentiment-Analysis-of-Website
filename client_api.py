@@ -28,6 +28,16 @@ st.markdown("##")
 
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
+page_by_img = f"""
+<style>
+[data-testid = "stVerticalBlock"] > div.element-container.css-1700g76.e1tzin5v3 {{
+
+dispaly : "none"
+
+}}
+</style>
+"""
+st.markdown(page_by_img , unsafe_allow_html = True)
 
 def retrieve_data(fill_url):    
     headers = {
