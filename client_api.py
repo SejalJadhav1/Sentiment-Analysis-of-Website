@@ -32,6 +32,8 @@ linear-gradient(45deg, #42cce5 5%, transparent 25%), linear-gradient(315deg, #42
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
+with open("design.css") as design:
+    st.markdown(f"<style>{design.read()}<style/>", unsafe_allow_html = True)
 
 st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
