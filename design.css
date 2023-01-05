@@ -5,3 +5,10 @@ span.css-10trblm.e16nr0p30
   font-family: 'Circular-Loom';
   border-radius: 10px;
 }
+
+span.css-k1vhr4.gzxvld3
+{
+  opacity: 0.6;
+  background-image: linear-gradient(135deg, #42cce5 5%, transparent 25%), linear-gradient(225deg, #42cce5 5%, transparent 25%), linear-gradient(45deg, #42cce5 5%, transparent 25%), linear-gradient(315deg, #42cce5 5%, #ffffff 25%);
+
+}
