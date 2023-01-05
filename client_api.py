@@ -30,8 +30,18 @@ linear-gradient(45deg, #42cce5 5%, transparent 25%), linear-gradient(315deg, #42
 }}
 </style>
 """
+page_bg_title = f"""
+<style>
+[data-testid="stMarkdownContainer"] > .main {{
+background-color: azure;
+font-family: 'Circular-Loom';
+}}
+</style>
+"""
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
+st.markdown(page_bg_title, unsafe_allow_html=True)
+
 
 st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
