@@ -30,7 +30,9 @@ fill_url = st.text_input("Enter the website (url) you want your sentiment scores
 
 page_by_img = f"""
 <style>
-[data-testid = "stVerticalBlock"] > div.element-container.css-1700g76.e1tzin5v3 {{
+[data-testid = "stVerticalBlock"] > div.st-ae.st-af.st-ag.st-ah.st-ai.st-aj.st-ak.st-bc.st-am.st-be.st-an.st-ao.st-ap.st-aq.st-ar.st-as.st-bd.st-au.st-av.st-aw.st-ax.st-ay.st-bb.st-b0.st-b1.st-b2.st-b3.st-b4.st-b5.st-b6.st-b7
+
+{{
 
 dispaly : "none";
 background-color: "black"
