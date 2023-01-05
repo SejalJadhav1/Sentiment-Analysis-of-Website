@@ -19,7 +19,6 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
 
 st.set_page_config(page_title="Sentiment Analysis of Website", page_icon=":memo::", layout="wide")
-
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
@@ -30,17 +29,8 @@ linear-gradient(45deg, #42cce5 5%, transparent 25%), linear-gradient(315deg, #42
 }}
 </style>
 """
-page_bg_title = f"""
-<style>
-[class="css-10trblm e16nr0p30"] > .main {{
-background-color: azure;
-font-family: 'Circular-Loom';
-}}
-</style>
-"""
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
-st.markdown(page_bg_title, unsafe_allow_html=True)
 
 
 st.title(":memo: Sentiment Analysis of Website")
