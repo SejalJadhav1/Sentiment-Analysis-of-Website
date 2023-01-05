@@ -32,7 +32,7 @@ linear-gradient(45deg, #42cce5 5%, transparent 25%), linear-gradient(315deg, #42
 """
 page_bg_title = f"""
 <style>
-[data-testid="stMarkdownContainer"] > .main {{
+[class="css-10trblm e16nr0p30"] > .main {{
 background-color: azure;
 font-family: 'Circular-Loom';
 }}
