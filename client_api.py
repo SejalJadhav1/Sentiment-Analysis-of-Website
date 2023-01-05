@@ -32,7 +32,8 @@ page_by_img = f"""
 <style>
 [data-testid = "stVerticalBlock"] > div.element-container.css-1700g76.e1tzin5v3 {{
 
-dispaly : "none"
+dispaly : "none";
+background-color: "black"
 
 }}
 </style>
