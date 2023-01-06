@@ -26,6 +26,19 @@ with open("design.css") as design:
 st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
 
+st.markdown(
+"""
+<style>
+.stApp.streamlit-wide.css-2ent32.eczokvf1 {
+
+background-color: "black"
+
+}
+</style>
+""" , 
+    unsafe_allow_html = True
+)    
+
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
 if not fill_url.startswith("http"):
@@ -87,6 +100,7 @@ def retrieve_data(fill_url):
     for i in final_dict.values():
         value.append(i)
     return key , value
+
 
 if fill_url is None:
     st.info("Please fill in a URL")
