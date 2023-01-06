@@ -136,3 +136,5 @@ hide_st_style = """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
     
+if st.checkbox("Show/Hide"):
+    st.write("The app retrieves data like paragraphs and titles of the input website, calculates sentiment scores for the same and gives the output ")
