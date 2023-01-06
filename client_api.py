@@ -31,16 +31,6 @@ with open("design.css") as design:
 st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
 
-page_by_img = """
-<style>
-
-[data-testid = "stHeader"]{
-background-color: transparent;
-}
-</style>
-"""
-
-st.markdown(page_by_img , unsafe_allow_html = True)
 
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
