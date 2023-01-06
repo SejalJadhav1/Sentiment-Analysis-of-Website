@@ -32,3 +32,9 @@ div.appview-container.css-1wrcr25.egzxvld4
   background-size: 20px 20px;
   background-repeat: repeat;
 }  
+
+div.stApp.streamlit-wide.css-2ent32.eczokvf1 > header
+{
+  background-color: transparent;
+  
+}  
