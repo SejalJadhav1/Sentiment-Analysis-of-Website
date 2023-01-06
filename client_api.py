@@ -26,18 +26,23 @@ with open("design.css") as design:
 st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
 
-st.markdown(
+page_by_img = 
 """
 <style>
-.stApp.streamlit-wide.css-2ent32.eczokvf1 {
+[data_testid = "stAppViewContainer"] {
 
-background-color: "black"
+background-color: #e5e5f7;
+opacity: 0.8;
+background-image:  linear-gradient(135deg, #444cf7 25%, transparent 25%), linear-gradient(225deg, #444cf7 25%, transparent 25%), linear-gradient(45deg, #444cf7 25%, transparent 25%), linear-gradient(315deg, #444cf7 25%, #e5e5f7 25%);
+background-position:  10px 0, 10px 0, 0 0, 0 0;
+background-size: 20px 20px;
+background-repeat: repeat;
 
 }
 </style>
-""" , 
-    unsafe_allow_html = True
-)    
+"""
+
+st.markdown(page_by_img , unsafe_allow_html = True)
 
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
