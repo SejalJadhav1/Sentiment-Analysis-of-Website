@@ -23,7 +23,7 @@ st.set_page_config(page_title="Sentiment Analysis of Website", page_icon=":memo:
 
 if st.checkbox("Show/Hide"):
     st.text('''The app retrieves data like paragraphs and titles of the input website, calculates sentiment scores for the same and gives the output.
-    If you like my work, and have any suggetions, mail me on sejalsj2001@gmail.com''')
+               --If you like my work, and have any suggetions, mail me on sejalsj2001@gmail.com--''')
 #     st.caption("If you like my work, and have any suggetions, mail me on sejalsj2001@gmail.com")
     
 with open("design.css") as design:
