@@ -28,6 +28,8 @@ st.markdown("##")
 
 fill_url = st.text_input("Enter the website (url) you want your sentiment scores for :")
 
+if not fill_url.startswith("http"):
+    st.stop()
 
 def retrieve_data(fill_url):    
     headers = {
