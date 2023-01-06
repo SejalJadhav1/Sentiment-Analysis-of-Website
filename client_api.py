@@ -32,9 +32,9 @@ page_by_img = """
 
 background-color: #e5e5f7;
 opacity: 0.8;
-background-image:  linear-gradient(#afe6e3 2.6px, transparent 2.6px), linear-gradient(90deg, #afe6e3 2.6px, transparent 2.6px), linear-gradient(#afe6e3 1.3px, transparent 1.3px), linear-gradient(90deg, #afe6e3 1.3px, #e5e5f7 1.3px);
-background-size: 65px 65px, 65px 65px, 13px 13px, 13px 13px;
-background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px, -1.3px -1.3px;
+background-image:  radial-gradient(#00b4ad 0.5px, transparent 0.5px), radial-gradient(#00b4ad 0.5px, #e5e5f7 0.5px);
+background-size: 20px 20px;
+background-position: 0 0,10px 10px;
 }
 
 [data-testid = "stHeader"]{
