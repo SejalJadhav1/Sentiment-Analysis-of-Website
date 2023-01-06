@@ -33,15 +33,6 @@ st.markdown("##")
 
 page_by_img = """
 <style>
-[data-testid = "stAppViewContainer"] {
-
-background-color: #e5e5f7;
-opacity: 0.8;
-background-image:  linear-gradient(135deg, #f8c5d9 25%, transparent 25%), linear-gradient(225deg, #f8c5d9 25%, transparent 25%), linear-gradient(45deg, #f8c5d9 25%, transparent 25%), linear-gradient(315deg, #f8c5d9 25%, #e5e5f7 25%);
-background-position:  10px 0, 10px 0, 0 0, 0 0;
-background-size: 20px 20px;
-background-repeat: repeat;
-}
 
 [data-testid = "stHeader"]{
 background-color: transparent;
