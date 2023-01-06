@@ -26,9 +26,9 @@ with open("design.css") as design:
 st.title(":memo: Sentiment Analysis of Website")
 st.markdown("##")
 
-page_by_img =  """
+page_by_img = """
 <style>
-[data_testid = "stAppViewContainer"] {
+[data-testid = "stAppViewContainer"] {
 
 background-color: #e5e5f7;
 opacity: 0.8;
