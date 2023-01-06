@@ -20,6 +20,11 @@ from nltk.tokenize import word_tokenize
 
 st.set_page_config(page_title="Sentiment Analysis of Website", page_icon=":memo::", layout="wide")
 
+
+if st.checkbox("Show/Hide"):
+    st.write("If you like my work, and have any suggetions, mail me on sejalsj2001@gmail.com")
+    
+    
 with open("design.css") as design:
     st.markdown(f"<style>{design.read()}<style/>", unsafe_allow_html = True)
 
@@ -139,8 +144,6 @@ def pos_neg_neu(sentiment_text):
 
 st.subheader(pos_neg_neu(score))
 
-if st.checkbox("Show/Hide"):
-    st.write("If you like my work, and have any suggetions, mail me on sejalsj2001@gmail.com")
     
 hide_st_style = """
              <style>
