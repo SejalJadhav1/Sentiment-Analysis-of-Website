@@ -35,7 +35,10 @@ opacity: 0.8;
 background-image:  linear-gradient(#afe6e3 2.6px, transparent 2.6px), linear-gradient(90deg, #afe6e3 2.6px, transparent 2.6px), linear-gradient(#afe6e3 1.3px, transparent 1.3px), linear-gradient(90deg, #afe6e3 1.3px, #e5e5f7 1.3px);
 background-size: 65px 65px, 65px 65px, 13px 13px, 13px 13px;
 background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px, -1.3px -1.3px;
+}
 
+[data-testid = "stHeader"]{
+background-color: transparent;
 }
 </style>
 """
