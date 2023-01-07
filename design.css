@@ -1,9 +1,47 @@
 span.css-10trblm.e16nr0p30
 {
-  font-family: -webkit-body;
+  text-align: center;
+  background-color: transparent;
+  font-family: 'Circular-Loom';
+  border-radius: 10px;
+}
+
+div.css-184tjsw.e16nr0p34
+{
+  background-color: transparent;
+  font-family: 'Circular-Loom';
+  border-radius: 10px;
+}
+
+div.css-184tjsw.e16nr0p34 > p
+{
+  font-size: 18px;
+}
+
+div.st-b3.st-b8.st-d0.st-b1.st-bk.st-ae.st-af.st-ag.st-ah.st-ai.st-aj.st-cm.st-cx
+{
+  background-color: #e5e5f7;
+}
+
+div.appview-container.css-1wrcr25.egzxvld4
+{
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image:  linear-gradient(135deg, #f8c5d9 25%, transparent 25%), linear-gradient(225deg, #f8c5d9 25%, transparent 25%), linear-gradient(45deg, #f8c5d9 25%, transparent 25%), linear-gradient(315deg, #f8c5d9 25%, #e5e5f7 25%);
+  background-position:  10px 0, 10px 0, 0 0, 0 0;
+  background-size: 20px 20px;
+  background-repeat: repeat;
 }  
+
+div.stApp.streamlit-wide.css-2ent32.eczokvf1 > header
+{
+  background-color: transparent;
   
-div.stApp.streamlit-wide.css-2ent32.eczokvf1
-{  
-background-color: green
-}    
+}  
+
+div.css-1offfwp.e16nr0p34 > p
+{
+  font-family: 'Circular-Loom';
+  font-size: 15px
+
+}
